@@ -28,6 +28,10 @@ class Input extends Component {
   input = React.createRef();
 
   componentDidUpdate(prevProps) {
+    if (this.props.props.inputRenderer) {
+      return
+    }
+
     if (
       this.props.state.dropdown || (prevProps.state.dropdown !== this.props.state.dropdown && this.props.state.dropdown) ||
       this.props.props.autoFocus
